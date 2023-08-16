@@ -2,11 +2,48 @@
 *  Cada objeto debe tener adentro otro objeto
 *  Usar minimo 3 metodos de arreglos sobre el array */
 
-/* Array de casa con color, ciudad, pisos, personas
-que viven dentro, y para personas ocupacion, edad, sexo*/
+const vivienda = [{
+    color: 'amarillo',
+    ciudad: 'Medellin',
+    pisos: 2,
+    dueño: {
+        ocupacion: 'jefe de planta',
+        edad: 45,
+        sexo: 'Masculino'
+    }
+}]
 
-/* Array de dispositivos moviles con marca, precio, tiempo de
-uso, y modelo con color, ram, almacenamiento, flash frontal
-tipo true o false */
+const celular = [{
+    marca: 'Samsung',
+    precio: 350,
+    tiempoUso: '2 años',
+    specs: {
+        modelo: 'Galaxy s9',
+        color: 'Azul',
+        RAM: 4,
+        almacenamiento: 64,
+        flashFrontal: false
+    },
+    unicoDueño: false
+}]
 
-// Arreglos .forEach, .filter y .every
+// .forEach
+const BDGobierno = []
+
+vivienda.forEach((item)=>{
+    BDGobierno.push(item)
+})
+
+console.log("La siguiente vivienda fue agregada correctamente a la base de datos.");
+console.log(BDGobierno);
+
+// .filter
+const aplica = vivienda.filter((ubicacion) => ubicacion.ciudad === 'Medellin')
+
+console.log("La siguiente casa aplica a matricula 0 debido a su ubicacion en la ciudad de Medellin");
+console.log(aplica);
+
+// .every
+const unDueño = celular.every((dueño) => dueño.unicoDueño === true) 
+
+console.log(`El celular cuenta con un unico dueño: ${unDueño}`);
