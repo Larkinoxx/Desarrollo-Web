@@ -20,7 +20,7 @@ const comprobacionDatos = (edad, año, funcion1, funcion2) =>{
   let nacimiento = funcion2(edad,año);
   console.log("Datos actualizados durante una funcion callback: ", datosPersonales);
   console.log("Año de nacimiento durante una funcion callback: ", nacimiento);
-  return nacimiento;
+  return correccion, nacimiento;
 }
 
 console.log("Llamado a 2 funciones a traves de un callback: ", comprobacionDatos(41, 2023, correccionEdad, añoNacimiento), datosPersonales);
